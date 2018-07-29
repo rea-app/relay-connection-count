@@ -37,7 +37,7 @@ const userType = new GraphQLObjectType({
 });
 ```
 
-Tis should give a schema looking like:
+This should give a schema looking like:
 
 ```graphql
 type User {
