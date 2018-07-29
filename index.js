@@ -6,20 +6,20 @@ import {
   connectionFromArray,
   connectionFromPromisedArray,
 } from "graphql-relay";
-import { GraphQLInt, GraphQLNonNull } from "graphql";
+import { GraphQLInt, GraphQLNonNull, type GraphQLObjectType } from "graphql";
 
 type ConnectionFields = {
   [key: string]: any,
 };
 
-type Config<T, Y> = {
+type Config<T> = {
   prefix: string,
-  connectionType: T,
-  resolveConnection: (...any) => Array<Y> | Promise<Array<Y>>,
+  connectionType: GraphQLObjectType,
+  resolveConnection: (...any) => Array<T> | Promise<Array<T>>,
   extraArgs?: ?any,
 };
 
-export function createFields<T, Y>(config: Config<T, Y>): ConnectionFields {
+export function createFields<T>(config: Config<T>): ConnectionFields {
   const { prefix, connectionType, resolveConnection, extraArgs } = config;
   const connectionFieldName = plural(prefix);
   const countFieldName = `${prefix}Count`;
