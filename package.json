@@ -1,6 +1,6 @@
 {
   "name": "relay-connection-count",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Helper for creating a count field next to connections in Relay compliant GrapqhQL schemas",
   "main": "lib/index.js",
   "repository": "https://github.com/rea-app/relay-connection-count.git",
