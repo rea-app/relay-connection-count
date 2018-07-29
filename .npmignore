@@ -1,1 +1,5 @@
 index.js
+.babelrc
+.flowconfig
+flow-typed/
+.vscode/
